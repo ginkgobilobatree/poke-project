@@ -1,0 +1,185 @@
+main {
+    height: 91vh;    
+    padding: 3em 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#arena { /* button arena changer */
+    position: fixed;
+    bottom: 6em;
+    background-color: #99cd32cb;
+    border: solid black 1px;
+    border-radius: 30px;
+}
+
+#arena:hover {
+    background-color: white;
+}
+
+#arena:active {
+    background-color: black;
+}
+
+/* ---------------------------cards------------------------------- */
+
+.card {
+    width: 400px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    border: 4px solid #810000;
+    box-shadow: -5px 5px 15px #1d1d1d;
+}
+
+.card-pic {
+    border-radius: 1em 1em 0 0;
+    border: 2px solid #810000;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 100%;
+}
+
+#left-image, #right-image {
+    overflow: hidden;
+}
+
+.card-text {
+    width: 300px;
+    height: 300px;
+    background: white;
+    border-radius: 0 0 1em 1em;
+    border: 2px #810000 solid;
+    font-size: 25px;
+    line-height: 60px;
+}
+
+/* ------------------------left pokemon----------------------------- */
+
+.myPokemon {
+    background-color: #ffff00de;
+}
+
+#myPokemon, #opponent {
+    font-size: 30px;
+    color: black;
+}
+
+button {
+    background-color: #d6b708;
+    text-decoration: none;
+    border: none;
+    padding: 7px 10px;
+    width: 90px;
+    cursor: pointer;
+    transition: all .1s;
+}
+#leftA, #rightA {
+    background-color: #d4691dcb;
+}
+
+#leftA, #leftB {
+    border-radius: 20px 0 0 20px;
+}
+
+#rightA, #rightB {
+    border-radius: 0 20px 20px 0;
+}
+
+button:hover, #leftA:hover, #rightA:hover {
+    transform: scale(1.1);
+    outline: black solid 1px;
+    background-color: white;
+}
+
+button#fight:active, button:active, #leftA:active, #rightA:active {
+    background-color: black;
+    color: white;
+}
+
+/* -----------------------------white box in the middle---------------------- */
+
+#fight {
+    width: 150px;
+    height: 150px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8ffcb;
+    border: 1px solid black;
+    border-radius: 100%;
+    font-size: 2em;
+    transition: all .1s;
+}
+
+#fight:hover {
+    background-color: red;
+    outline: 3px black solid;
+    text-transform: uppercase;
+}
+
+#fight:active::after {
+    content: 'ING';
+}
+
+/* -----------------------------right pokemon-------------------------------- */
+
+.opponent {
+    background-color: #d4691dcb;
+}
+
+/* -------------------------------animation---------------------------------------- */
+#moving1, #moving2 {
+    position: relative;
+    z-index: 1;
+}
+
+.moveSmack {
+    animation: smack 1.5s ease;
+}
+
+.moveBounce {
+    animation: bounce 1.5s;
+}
+
+#main {
+    position: relative;
+}
+
+.moveToronto {
+    animation: toronto 5s ease-in-out infinite;
+    overflow: hidden;
+}
+
+
+@keyframes smack {
+    0%   {left: 0px; transform: rotate(0)}
+    9%   {left: 650px; transform: rotate(4deg)}
+    100% {left: 0px; transform: rotate(0)}
+}
+
+@keyframes bounce {
+    0%   {right: 0; transform: rotate(0)}
+    4%  {right: 0; transform: rotate(0)}
+    13%  {right: -100px; transform: rotate(6deg)}
+    80% {right: 0; transform: rotate(0)}
+}
+
+@keyframes toronto { 
+    from { background-position: 0 0; }
+    /* 25%  { background-position: 50% 25%; } */
+    50%  { background-position: 100% 0; }
+    /* 75%  { background-position: 50% 25%; } */
+    to   { background-position: 0 0; }
+}

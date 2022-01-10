@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon-Battle</title>
+</head>
+
+<body>
+    <main id='main'>
+        <button onclick='arenaChange()' id='arena'>Arena</button>
+        <div class="card myPokemon" id="moving1">
+            <p id="myPokemon"></p>
+            <div class="card-pic card-pic-myPokemon" id='left-image'></div>
+            <p class="card-text" id='text-myPokemon'></p>
+            <p>Wähle ein Pokemon</p>
+            <div>
+                <button id='leftA'>vorheriges</button>
+                <button id='rightA'>nächstes</button>
+            </div>
+        </div>
+        <button type="button" id="fight">fight</button>
+        <div class="card opponent" id="moving2">
+            <p id="opponent"></p>
+            <div class="card-pic card-pic-opponent" id='right-image'></div>
+            <p class="card-text" id='text-opponent'></p>
+            <p>Wähle ein Pokemon</p>
+
+            <div>
+                <button id='leftB'>vorheriges</button>
+                <button id='rightB'>nächstes</button>
+            </div>
+        </div>
+    </main>
+    <script src="pokémon.js"></script>
+</body>
+
+</html>
